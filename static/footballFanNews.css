@@ -1,0 +1,786 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: url("background.PNG");
+}
+#header{
+    position: absolute;
+    margin-left: 230px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 86px;
+}
+#navbar{
+    position: absolute;
+    margin-left: 230px;
+    margin-top: 177px;
+}
+#moreTeamInfo, #morePlayerInfo
+{
+    display: none;
+    list-style-type: none;
+}
+
+#playersList li, #teamsList li
+{
+    display: block;
+}
+
+#navbar a{
+    color: white;
+    padding: 36px 110px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+#navbar a:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.selectedLink
+{
+    background-color: #BF97DF;
+}
+#matchesDropdownContent{
+    display: none;
+}
+#matchesDropdownText:hover~#matchesDropdownContent, #matchesDropdownContent:hover{
+    display: block;
+    width: 341px;
+    margin: 0;
+    padding: 0;
+    margin-left: 657px;
+    margin-top: 35px;
+    background-color: #5F0C9F;
+    list-style-type: none;
+}
+#matchesDropdownContent li{
+    padding: 37px 0px;
+}
+#matchesDropdownContent li a{
+    padding: 37px 90px;
+}
+
+.upcomingMatchesRightBox, .pastMatchesRightBox, .liveMatchesRightBox{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 0.9;
+    width: 30%;
+    height: 60%;
+    margin-left: 1240px;
+    margin-top: 250px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+.upcomingMatchesLeftBox, .pastMatchesLeftBox, .liveMatchesLeftBox{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 0.9;
+    width: 35%;
+    height: 50%;
+    margin-left: 120px;
+    margin-top: 355px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+#commentsBox{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 0.9;
+    width: 82%;
+    height: 15%;
+    margin-left: 200px;
+    margin-top: 890px;
+    border: 1px solid black;
+}
+#labelEnterTeam{
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#enterTeamTextBox{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 280px;
+    width: 300px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#title{
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF850;
+    text-shadow: -2px 4px 9px #000000;
+    z-index: -100;
+}
+#titleLive{
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    text-shadow: -2px 4px 9px white;
+    z-index: -100;
+}
+#titlePast{
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    text-shadow: -2px 4px 9px white;
+    z-index: -100;
+}
+#loadingImage
+{
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 35%;
+}
+
+#searchButton{
+    position: absolute;
+    margin-left: 650px;
+    margin-top: 276px;
+    width: 100px;
+    background-color: #A26DCC;
+    border: 2px solid black;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+#searchButton:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#teamScore{
+    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    color: white;
+}
+.matchFacts{
+    margin-top: -25px;
+    margin-left: 5%;
+    width: 90%;
+    border: 1px solid black;
+    padding-bottom: 20px;
+}
+#matchFactsText{
+    margin-top: 5px;
+    position: relative;
+    margin-left: 5%;
+    width: 90%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+#competition{
+    margin-top: 5px;
+    position: relative;
+    margin-left: 5%;
+    width: 90%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+.competition{
+    border: 1px solid black;
+    width: 90%;
+    margin-left: 5%;
+}
+.lineups{
+    border: 1px solid black;
+    margin-top: 30px;
+    width: 90%;
+    margin-left: 5%;
+}
+#lineup1Text{
+    margin-top: 5px;
+    position: relative;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+#lineup2Text{
+    margin-top: 5px;
+    position: relative;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    padding-bottom: 240px;
+}
+#commentsText{
+    margin-top: 5px;
+    position: relative;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+#commentsTextarea{
+    position: relative;
+    margin-top: -40px;
+    margin-left: 5px;
+    border: 1px solid black;
+    resize: none;
+}
+
+#commentsListDiv
+{
+    position: relative;
+    margin-top: -100px;
+    margin-left: 740px;
+    width: 40%;
+    height: 40%;
+    border: 1px solid black;
+    resize: none;
+    overflow-y: scroll;
+}
+#postSuccessMessage
+{
+    position: relative;
+    margin-top: -45px;
+    margin-left: 740px;
+}
+#submitComment{
+    position: relative;
+    bottom: 15px;
+    padding: 10px 15px;
+    border: 1px solid black;
+    background-color: white;
+}
+.teamPlaying{
+    padding-bottom: -20px;
+    border-bottom: 1px solid black;
+}
+#teamsPlayingList{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    color: white;
+}
+#detailsForGame{
+    color: white;
+    margin-top: -135px;
+    margin-left: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+}
+.moreInfoButton{
+    float: right;
+    margin-top: -45px;
+    margin-right: 10px;
+    padding: 8px 30px;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 1rem;
+    font-weight: bold;
+}
+#addComment
+{
+    float: right;
+    margin-top: -45px;
+    margin-right: 10px;
+    padding: 8px 30px;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.moreInfoButton:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.teamsAndPlayersLeftBox{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 0.9;
+    width: 30%;
+    height: 53%;
+    margin-left: 100px;
+    margin-top: 320px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+.teamsAndPlayersCenterBox{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 0.9;
+    width: 30%;
+    height: 53%;
+    margin-left: 680px;
+    margin-top: 320px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    z-index: -100;
+}
+.teamsAndPlayersRightBox{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 0.9;
+    width: 30%;
+    height: 53%;
+    margin-left: 1260px;
+    margin-top: 320px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+#searchByTeamTitle{
+    position: absolute;
+    margin-top: 245px;
+    margin-left: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: -100;
+}
+#searchByTeamSearch{
+    position: absolute;
+    margin-top: 275px;
+    margin-left: 245px;
+    padding: 10px;
+    width: 300px;
+    z-index: -100;
+}
+#searchByPlayerTitle{
+    position: absolute;
+    margin-top: 245px;
+    margin-left: 880px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: -100;
+}
+#searchByPlayerSearch{
+    position: absolute;
+    margin-top: 275px;
+    margin-left: 800px;
+    padding: 10px;
+    width: 300px;
+    z-index: -100;
+}
+#listOfTeams{
+    margin: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #30D5C8;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+#btnSearchByTeam{
+    position: absolute;
+    padding: 10px 12px;
+    color: green;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 275px;
+    margin-left: 550px;
+}
+#btnSearchByPlayer{
+    position: absolute;
+    padding: 10px 12px;
+    color: green;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 275px;
+    margin-left: 1110px;
+    z-index: -100;
+}
+#btnSearchByTeam:hover, #btnSearchByPlayer:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.topLeftBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 25%;
+    margin-left: 120px;
+    margin-top: 290px;
+    border: 1px solid black;
+}
+.bottomLeftBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 25%;
+    margin-left: 120px;
+    margin-top: 620px;
+    border: 1px solid black;
+}
+.topRightBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 25%;
+    margin-left: 1320px;
+    margin-top: 290px;
+    border: 1px solid black;
+}
+.bottomRightBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 25%;
+    margin-left: 1320px;
+    margin-top: 620px;
+    border: 1px solid black;
+}
+.centerBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 35%;
+    height: 60%;
+    margin-left: 625px;
+    margin-top: 250px;
+    border: 1px solid black;
+    z-index: -100;
+}
+
+
+
+
+
+
+#listOfPlayers{
+    margin: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #30D5C8;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+#detailedInfo{
+    margin: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #30D5C8;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+
+
+#loadingImage{
+    position: absolute;
+    margin-left: 850px;
+    margin-top: 420px;
+    z-index: -2;
+}
+#searchInput{
+    position: absolute;
+    margin-left: 700px;
+    margin-top: 280px;
+    padding: 8px;
+    width: 450px;
+    z-index: -1000;
+}
+#btnSearch{
+    position: absolute;
+    margin-left: 1175px;
+    margin-top: 280px;
+    padding: 7px;
+    z-index: -1000;
+}
+#btnSearchByPlayer{
+    position: absolute;
+    margin-left: 1105px;
+    margin-top: 275px;
+    padding: 9px;
+}
+#btnSearchByTeam{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: 275px;
+    padding: 9px;
+}
+#labelSearch{
+    position: absolute;
+    color: white;
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 900px;
+    margin-top: 270px;
+    z-index: -1000;
+}
+#teamResults{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 1;
+    width: 30%;
+    height: 46%;
+    margin-left: 260px;
+    margin-top: 380px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    z-index: -2;
+}
+#playerResults{
+    position: absolute;
+    background-color: #BF97DF;
+    opacity: 1;
+    width: 30%;
+    height: 46%;
+    margin-left: 1060px;
+    margin-top: 380px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    z-index: -2;
+}
+#teamSearchTitle{
+    position: absolute;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkblue;
+    margin-left: 260px;
+    margin-top: 340px;
+    z-index: 100;
+    padding: 10px 20px;
+}
+#playersSearchTitle{
+    position: absolute;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkblue;
+    margin-left: 1060px;
+    margin-top: 340px;
+    z-index: 100;
+    padding: 10px 20px;
+    z-index: -1;
+}
+
+#selectLeagueCup{
+    font-size: 1.4rem;
+    color: white;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 460px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#leagueDropDown{
+    position: absolute;
+    margin-left: 130px;
+    padding: 10px;
+    width: 800px;
+    margin-top: 510px;
+}
+#cupDropDown{
+    position: absolute;
+    margin-left: 130px;
+    padding: 10px;
+    width: 800px;
+    margin-top: 600px;
+}
+#leagueTableTitle{
+    position: absolute;
+    margin-left: 1380px;
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 260px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.leagueTable{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 37%;
+    height: 55%;
+    margin-left: 1100px;
+    margin-top: 300px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+#leaguePosition{
+    margin: 0;
+    margin-left: -40px;
+    padding: 10px 0px;
+    list-style-type: none;
+    border-bottom: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.lineups>*, .competition>*, #teamBGoals>*, #teamAGoals>*
+{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.topLeftBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 25%;
+    margin-left: 120px;
+    margin-top: 290px;
+    border: 1px solid black;
+}
+.bottomLeftBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 30%;
+    margin-left: 120px;
+    margin-top: 590px;
+    border: 1px solid black;
+}
+
+.bottomLeftBox img{
+    margin-bottom: 30px;
+}
+
+.topRightBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 25%;
+    margin-left: 1320px;
+    margin-top: 290px;
+    border: 1px solid black;
+}
+.bottomRightBox{
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    width: 25%;
+    height: 25%;
+    margin-left: 1320px;
+    margin-top: 620px;
+    border: 1px solid black;
+}
+
+.bottomRightBox img{
+    text-align: right;
+    width:300px;
+    height:200px;
+}
+.centerBox{
+    position: absolute;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 35%;
+    height: 60%;
+    margin-left: 625px;
+    margin-top: 250px;
+    border: 1px solid black;
+    z-index: -100;
+}
+
+.slider{
+    border-radius: 5px;
+    overflow: hidden;
+    width:500px;
+    height:200px;
+}
+
+.slides{
+    display:flex;
+    width:500%;
+    height:500px;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    transition: 2s;
+    width:20%;
+}
+
+.slide img{
+    width:800px;
+    height:500px;
+}
+
+.manual-navigation{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width:800px;
+    /*margin-top: -40px;*/
+}
+
+.manual-button {
+    padding:3px;
+    border-radius:10px;
+    border: 2px solid #5F0C9F;
+    cursor:pointer;
+    transition:1s;
+}
+
+.manual-button:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-button:hover{
+    background:#5F0C9F;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+.auto-navigation{
+    position:absolute;
+    display:flex;
+    width: 800px;
+    justify-content: center;
+
+}
+
+.auto-navigation div{
+    border: 2px solid #5F0C9F;
+    padding: 5px;
+    border-radius:10px;
+    transition:1s;
+}
+.auto-navigation div:not(:last-child){
+    margin-right:40px;
+}
+#radio1:checked ~ .auto-navigation .auto-button1{
+    background-color: #5F0C9F;
+}
+
+
+#radio2:checked ~ .auto-navigation .auto-button2{
+    background-color: #5F0C9F;
+}
+
+
+#radio2:checked ~ .auto-navigation .auto-button3{
+    background-color: #5F0C9F;
+}
+
+
+#radio2:checked ~ .auto-navigation .auto-button4{
+    background-color: #5F0C9F;
+}

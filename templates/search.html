@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage | Football Fan News</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="/static/footballFanNews.css"/>
+    <script src="../static/scripts/search_script.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h1>Football Fan News</h1>
+    </div>
+    <div id="navbar">
+        <a href="/">Home</a>
+        <a href="/teams_and_players.html">Teams and Players</a>
+        <a href="" id="matchesDropdownText">Matches</a>
+        <a href="/search.html" class="selectedLink">Search</a>
+        <a href="/league_tables.html" id="leagueTable">League Tables</a>
+        <ul id="matchesDropdownContent">
+            <li><a href="/live_matches.html">LIVE Matches</a></li>
+            <li><a href="/past_matches.html">Past Matches</a></li>
+            <li><a href="/upcoming_fixtures.html">Upcoming Fixtures</a></li>
+        </ul>
+    </div>
+       <div id="search">
+            <label for="searchInput" id="labelSearch">Search:</label>
+            <br>
+            <input type="text" id="searchInput"/>
+            <button id="btnSearch" onclick="displaySearchResults()">✔</button>
+        </div>
+        <p id="playersSearchTitle">Players</p>
+        <p id="teamSearchTitle">Teams</p>
+        <div id="searchResults">
+            <ol id="teamResults">
+            </ol>
+            <ol id="playerResults">
+            </ol>
+        </div>
+        <img id="loadingImage" src="../static/loading.gif" alt="Loading Icon"/>
+</body>
+</html>

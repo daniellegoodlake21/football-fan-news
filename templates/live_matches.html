@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage | Football Fan News</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="../static/footballFanNews.css"/>
+    <script src="../static/scripts/live_matches.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h1>Football Fan News</h1>
+    </div>
+    <div id="navbar">
+        <a href="/" >Home</a>
+        <a href="/teams_and_players.html">Teams and Players</a>
+        <a href="" id="matchesDropdownText" class="selectedLink">Matches</a>
+        <a href="/search.html">Search</a>
+        <a href="/league_tables.html" id="leagueTable">League Tables</a>
+        <ul id="matchesDropdownContent">
+            <li><a href="/live_matches.html">LIVE Matches</a></li>
+            <li><a href="/past_matches.html">Past Matches</a></li>
+            <li><a href="/upcoming_fixtures.html">Upcoming Fixtures</a></li>
+        </ul>
+        
+    </div>
+    <div class="title">
+        <h2 id="titleLive">LIVE Matches</h2>
+    </div>
+    <div class="formEnterTeamCupName">
+        <label for="enterTeamCupName" id="labelEnterTeam">Enter Team/Cup Name</label>
+        <input type="text" placeholder="Enter Team or Cup Here" id="enterTeamTextBox">
+        <button id="searchButton" onclick="displaySearchResults()">Search</button>
+    </div>
+    <div class="liveMatchesRightBox" id="liveMatchesRightBox">
+        <h3 id="teamScore">Team 1 &nbsp; 0 - 0 &nbsp; Team 2</h3>
+        <div class="matchFacts">
+            <h3 id="matchFactsText">Match Facts</h3>
+            <div class="competition">
+                <h3 id="competition">League/Cup Competition</h3>
+                <h3 id="location">Location</h3>
+            </div>
+            <div class="lineups">
+                <div class="lineup1">
+                    <h3 id="lineup1Text">Lineup 1</h3>
+                    <br>
+                    <h4>Players</h4>
+                    <br>
+                    <ol id="lineup1Players"></ol>
+                    <br>
+                    <h4>Substitutes</h4>
+                    <br>
+                    <ol id="lineup1Substitutes"></ol>
+                    <h4>Coaches</h4>
+                    <p id="lineup1Coach"></p>
+                </div>
+                <br>
+                <div class="lineup2">
+                    <h3 id="lineup2Text">Lineup 2</h3>
+                    <br>
+                    <h4>Players</h4>
+                    <br>
+                    <ol id="lineup2Players"></ol>
+                    <br>
+                    <h4>Substitutes</h4>
+                    <br>
+                    <ol id="lineup2Substitutes"></ol>
+                    <h4>Coaches</h4>
+                    <p id="lineup2Coach"></p>
+                </div>
+            </div>
+            <div id="goalsInfo">
+                <h3 id="goalsInfoText">Goals</h3>
+                <h4 id="teamAGoalsText"></h4>
+                <ol id="teamAGoals"></ol>
+                <h4 id="teamBGoalsText"></h4>
+                <ol id="teamBGoals"></ol>
+            </div>
+        </div>
+    </div>
+    <div class="liveMatchesLeftBox" id="liveMatchesLeftBox">
+        <input type="hidden" id="matchID"/>
+    </div>
+    <div id="commentsBox">
+        <h3 id="commentsText">COMMENTS</h3>
+        <textarea name="" id="commentsTextarea" cols="50" rows="8" placeholder="Type here to add comment"></textarea>
+        <button id="addComment" onclick="addCommentToMatch()">Post</button>
+        <p id="postSuccessMessage"></p>
+        <div id="commentsListDiv">
+        <ol id="commentsList">
+        </ol>
+        </div>
+    </div>
+    <img id="loadingImage" src="../static/loading.gif" alt="Loading Icon"/>
+</body>
+</html>

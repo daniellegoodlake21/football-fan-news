@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage | Football Fan News</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="/static/footballFanNews.css"/>
+    <script src="../static/scripts/teams_and_players_script.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h1>Football Fan News</h1>
+    </div>
+    <div id="navbar">
+        <a href="/">Home</a>
+        <a href="/teams_and_players.html" class="selectedLink">Teams and Players</a>
+        <a href="" id="matchesDropdownText">Matches</a>
+        <a href="/search.html">Search</a>
+        <a href="/league_tables.html" id="leagueTable">League Tables</a>
+        <ul id="matchesDropdownContent">
+            <li><a href="/live_matches.html">LIVE Matches</a></li>
+            <li><a href="/past_matches.html">Past Matches</a></li>
+            <li><a href="/upcoming_fixtures.html">Upcoming Fixtures</a></li>
+        </ul>
+    </div>
+
+    <div class="teamsAndPlayersLeftBox">
+        <h4 id="listOfTeams">List of Teams</h4>
+        <ol id="teamsList"></ol>
+    </div>
+
+    <div id="searchByPlayer">
+         <h3 id="searchByPlayerTitle">Search By Player</h3>
+        <input type="search" id="searchByPlayerSearch" placeholder="Search by player here"/>
+        <button id="btnSearchByPlayer" onclick="searchByPlayer()">✔</button>
+    </div>
+    <div id="searchByTeam">
+         <h3 id="searchByTeamTitle">Search By Team</h3>
+        <input type="search" id="searchByTeamSearch" placeholder="Search by team here"/>
+        <button id="btnSearchByTeam" onclick="searchByTeam()">✔</button>
+    </div>
+    <div class="teamsAndPlayersCenterBox">
+        <h4 id="listOfPlayers">List of Players</h4>
+        <ol id="playersList"></ol>
+    </div>
+    <div class="teamsAndPlayersRightBox">
+        <h4 id="detailedInfo">Detailed Team / Players Information</h4>
+        <div id="blankMoreInfoArea"></div>
+        <div id="moreTeamInfo">
+            <p id="teamName"></p>
+            <p id="teamCoach"></p>
+            <ol id="teamUpcomingMatches"></ol>
+            <img id="teamLogo" src="" alt="Team Logo"/>
+        </div>
+        <div id="morePlayerInfo">
+            <p id="playerName"></p>
+            <p id="playerPosition"></p>
+            <p id="playerTeam"></p>
+            <img id="playerImage" src="" alt="Player Image"/>
+        </div>
+    </div>
+    <img id="loadingImage" src="../static/loading.gif" alt="Loading Icon"/>
+</body>
+</html>

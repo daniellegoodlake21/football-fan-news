@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage | Football Fan News</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="/static/footballFanNews.css"/>
+    <script src="static/scripts/league_tables_script.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h1>Football Fan News</h1>
+    </div>
+    <div id="navbar">
+        <a href="/">Home</a>
+        <a href="/teams_and_players.html">Teams and Players</a>
+        <a href="" id="matchesDropdownText">Matches</a>
+        <a href="/search.html">Search</a>
+        <a href="/league_tables.html" id="leagueTable" class="selectedLink">League Tables</a>
+        <ul id="matchesDropdownContent">
+            <li><a href="/live_matches.html">LIVE Matches</a></li>
+            <li><a href="/past_matches.html">Past Matches</a></li>
+            <li><a href="/upcoming_fixtures.html">Upcoming Fixtures</a></li>
+        </ul>
+
+    </div>
+    <div class="mainLeagueTables">
+        <h3 id="selectLeagueCup">Select LEAGUE or CUP competition:</h3>
+        <div class="leagueDropDownBox">
+            <select name="" id="leagueDropDown">
+                <option value="Premier League">Premier League</option>
+                <option value="Championship">Championship</option>
+                <option value="League 1">League 1</option>
+            </select>
+        </div>
+        <div class="cupDropDownBox">
+            <select name="" id="cupDropDown">
+                <option value="F.A CUP">F.A CUP</option>
+                <option value="Champions League">Champions League</option>
+                <option value="Europa League">Europa League</option>
+            </select>
+        </div>
+        <h3 id="leagueTableTitle">League Table</h3>
+        <div class="leagueTable">
+            <ul class="leagueTableTeams">
+                <li id="leaguePosition">&nbsp 1</li>
+                <li id="leaguePosition">&nbsp 2</li>
+                <li id="leaguePosition">&nbsp 3</li>
+                <li id="leaguePosition">&nbsp 4</li>
+                <li id="leaguePosition">&nbsp 5</li>
+                <li id="leaguePosition">&nbsp 6</li>
+                <li id="leaguePosition">&nbsp 7</li>
+                <li id="leaguePosition">&nbsp 8</li>
+                <li id="leaguePosition">&nbsp 9</li>
+                <li id="leaguePosition">&nbsp 10</li>
+                <li id="leaguePosition">&nbsp 11</li>
+                <li id="leaguePosition">&nbsp 12</li>
+                <li id="leaguePosition">&nbsp 13</li>
+                <li id="leaguePosition">&nbsp 14</li>
+                <li id="leaguePosition">&nbsp 15</li>
+                <li id="leaguePosition">&nbsp 16</li>
+                <li id="leaguePosition">&nbsp 17</li>
+                <li id="leaguePosition">&nbsp 18</li>
+                <li id="leaguePosition">&nbsp 19</li>
+                <li id="leaguePosition">&nbsp 20</li>
+            </ul>
+        </div>
+    </div>
