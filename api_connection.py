@@ -11,7 +11,7 @@ class ApiConnection:
     def get_all_data(data_type):
         headers = {
             'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
-            'x-rapidapi-key': "0dff86e16dmshaa2709149384dbdp137bdajsn614c917fa3c7"
+            'x-rapidapi-key': "GITHUB_PLACEHOLDER"
         }
         response = requests.request("GET", "https://api-football-v1.p.rapidapi.com/v3/" + data_type + "?season=2021",
                                     headers=headers, data={})
